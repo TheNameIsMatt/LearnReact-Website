@@ -1,0 +1,51 @@
+.Sidebar_Home{
+    left: 1rem;
+    top: 1rem;
+    bottom: 1rem;
+    width:150px;
+    position: fixed;
+    background-color: #e8342c;
+    border-radius: 0 10px 10px 0;
+    padding: 0;
+    
+    
+
+}
+
+.logo {
+    margin-left: 1px;
+    margin-top: 10px;
+    vertical-align: top;
+    width: inherit;
+    object-fit: cover;
+}
+
+ol {
+    color:aqua;
+    vertical-align: bottom;
+    max-width: fit-content;
+    padding: 0;
+    align-items: center;
+    position: relative;
+}
+
+li {
+   
+    color:white;
+    font-size: 100px;
+    list-style: none;
+    flex: auto;
+    text-align: center;
+    position: relative;
+    
+}
+
+h1{
+    vertical-align: bottom;
+    color:white;
+    font-size: 50px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    
+}
