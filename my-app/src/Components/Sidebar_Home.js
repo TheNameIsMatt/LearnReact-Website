@@ -1,15 +1,19 @@
 import './Sidebar_Home.css';
 import './Utilities/Utilities.css';
 import logo from './MyIcons/homeserve-white-logo.png';
-import React, { Component } from 'react';
+import React from 'react';
 import { FaFacebook, FaHeart, FaInstagram, FaGithub, FaTwitter } from "react-icons/fa";
-import { useState } from 'react';
 
 
 
 
-class Sidebar_Home extends Component {
 
+class Sidebar_Home extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = { name: "Matt"};
+    }
+    
     render() {
         return (
             <div className="Sidebar_Home card">
@@ -19,10 +23,16 @@ class Sidebar_Home extends Component {
                 <div className='container'>
                     <ol>
                         <div className='max-width'>
-                            <li><FaHeart></FaHeart></li>
+                            <li><FaHeart
+                            onMouseEnter={() => handleMouseEnter(this.state)}
+                            onMouseLeave={() => handleMouseLeave(this.props.pageName)}>
+                            <div id="hoverslidepanel" className='hoverslidepanel card'>
+                            <p>Boo</p>
+                        </div></FaHeart></li>
+
                         </div>
                         <div className='max-width'>
-                            <li><FaGithub></FaGithub></li>
+                            <li onClick={() => {console.log(this.state.name)}}><FaGithub></FaGithub></li>
                         </div>
                         <div className='max-width'>
                             <li><FaTwitter></FaTwitter></li>
@@ -39,8 +49,10 @@ class Sidebar_Home extends Component {
         );
     }
 }
-
-const handleMouseHover =()=> {
-
+const handleMouseEnter =(state)=> {
+    console.log(state.name)
+}
+const handleMouseLeave =(pageName)=> {
+    console.log(pageName)
 }
 export default Sidebar_Home;
