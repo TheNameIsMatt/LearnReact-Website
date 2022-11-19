@@ -1,11 +1,16 @@
+:root{
+    --main-bg-color: #e8342c;
+}
+
 .container{
+    bottom: 10px;
+    position: absolute;
     max-width: 1000px;
 	margin-right:auto;
 	margin-left:auto;
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	min-height:100vh;
 }
 
 .card{
