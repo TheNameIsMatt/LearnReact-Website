@@ -1,25 +1,25 @@
 .pagewrapper {
   text-align: center;
-  background-color: red;
   display: grid;
-  grid-template-columns: 0.1fr 0.9fr;
+  grid-template-columns: 180px;
   margin: 0;
   border-spacing: 0;
   border-collapse: collapse;
   column-gap: 0px;
+  width: 100%;
 }
 
 .one {
   grid-column: 1 / 1;
-  border-style: double;
-  border-color: purple;
-  width: 170px;
+
+  width: 180px;
   margin: 0;
   
 }
-.two {
+.cards {
   grid-column: 2 / 2;
-  flex: wrap;
-  border-style: double;
-  border-color: green;
+  flex-wrap: wrap;
+  display: flex;
+
+
 }

@@ -9,7 +9,7 @@ function App() {
     <div className="pagewrapper">
       <div className="one"><Sidebar_Home></Sidebar_Home></div>
       
-      <div className="two"><MainCards></MainCards></div>
+      <div className="cards"><MainCards></MainCards></div>
     </div>
   );
 }
