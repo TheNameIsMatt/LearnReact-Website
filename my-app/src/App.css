@@ -11,15 +11,34 @@
 
 .one {
   grid-column: 1 / 1;
-
-  width: 180px;
+  max-width: 180px;
   margin: 0;
   
 }
-.cards {
+.maininfocolumn{
   grid-column: 2 / 2;
   flex-wrap: wrap;
   display: flex;
+  margin: 10px;
+}
 
+.twentyeightygrid {
+  display: flex;
+  min-height:100px;
+  width: 100%;
+  gap: 2em;
 
+}
+
+.twenty {
+width:25%;
+height: inherit;
+margin-right: 20px;
+}
+
+.eighty{
+display: inline-block;
+width:75%;
+height: inherit;
+margin-right: 20px;
 }

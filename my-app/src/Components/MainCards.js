@@ -5,13 +5,9 @@ import React from 'react';
 const MainCards = () => {
     return (
         <>
-            <div className='maincards card'>hello</div>
-            <div className='maincards card'>hello</div>
-            <div className='maincards card'>hello</div>
-            <div className='maincards card'>hello</div>
-            <div className='maincards card'>hello</div>
-            <div className='maincards card'>hello</div>
-            <div className='maincards card'>hello</div>
+            <div className='maincolumn card'>hello</div>
+            
+
         </>
     );
 };
