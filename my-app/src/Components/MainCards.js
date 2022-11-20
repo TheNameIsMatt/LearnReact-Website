@@ -2,12 +2,15 @@ import './MainCards.css';
 import './Utilities/Utilities.css';
 import React from 'react';
 
-const MainCards = () => {
+function MainCards(props) {
     return (
         <>
-            <div className='maincolumn card'>hello</div>
+            <div className='maincolumn card'>
+                <h1>
+                    Hello {props.name}
+                </h1>
+            </div>
             
-
         </>
     );
 };

@@ -1,4 +1,5 @@
 .pagewrapper {
+  align-items: center;
   text-align: center;
   display: grid;
   grid-template-columns: 180px;
@@ -8,37 +9,42 @@
   column-gap: 0px;
   width: 100%;
 }
+.pagewrapper > :nth-child(2) {
+  margin-top: 1rem;
+  background-image: linear-gradient(to left, #e8342c,#e8872c);
+}
+
+.homeservetext {
+  font-size: 40px;
+  color: white;
+  float:right;
+  font-family: "museo-sans-rounded-700","Trebuchet MS",Arial,sans-serif;
+}
 
 .one {
   grid-column: 1 / 1;
   max-width: 180px;
   margin: 0;
-  
+
 }
-.maininfocolumn{
+
+.maininfoparent {
   grid-column: 2 / 2;
-  flex-wrap: wrap;
-  display: flex;
   margin: 10px;
+  border-radius: 10px;
+  padding: 1%;
 }
 
 .twentyeightygrid {
-  display: flex;
-  min-height:100px;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+  grid-auto-rows: column;
+  min-height: 100px;
+  width: inherit;
   gap: 2em;
-
+  
 }
 
-.twenty {
-width:25%;
-height: inherit;
-margin-right: 20px;
-}
-
-.eighty{
-display: inline-block;
-width:75%;
-height: inherit;
-margin-right: 20px;
+.twentyeightychild {
+  position: relative;
 }
