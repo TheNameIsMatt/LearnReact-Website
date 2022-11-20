@@ -5,13 +5,14 @@ import React, { useEffect } from 'react';
 function MainCards(props) {
 
     useEffect(()=>{
-        console.log(props);
-    });
+        
+    }, []);
+    
     return (
         <>
             <div className='maincolumn card'>
                 <h1>
-                    Hello {props.APIData[0].title}
+                    Hello {props.APIData[props.count].title}
                 </h1>
             </div>
             

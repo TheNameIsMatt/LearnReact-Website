@@ -4,7 +4,6 @@ import MainCards from "./Components/MainCards";
 import './App.css';
 import './Components/Utilities/Utilities.css';
 import './Components/Utilities/ButtonStyles.css'
-import img1 from './Components/Images/shy.png'
 
 
 
@@ -20,14 +19,21 @@ function App() {
   const [Images, setImages] = useState([]);
   const [APIData, setAPIData] = useState([]);
   const [RefreshAPI, setRefreshAPI] = useState(false);
+  const [count, setCount] = useState(0);
 
+  function increaseCount(){
+    setCount(prevCount => prevCount + 1);
+  }
+ 
   useEffect(() => {
                                         //A Directory to search, whether to search subdirectories and a regex of what to fetch
     setImages(importAll(require.context('./Components/Images', false, /\.(png|jpe?g|svg)$/)));
     fetchData();
+   
   }, []);
 
   useEffect(() =>{
+    console.log("useEffect being called to refresh");
     fetchData();
   }, [RefreshAPI])
 
@@ -42,18 +48,20 @@ function App() {
         <div className="twentyeightygrid">
           <div  className="twentyeightychild tworowcontainer">
             <img src={Images[1]}></img>
-            <button className="glow-on-hover" type="button" onClick={() => setRefreshAPI(!RefreshAPI)}>Press Me</button>
+            <button className="glow-on-hover" type="button" onClick={() => handleGlowButtonClick(RefreshAPI) }>Press Me</button>
           </div>
-          <div id="floop" className="twentyeightychild"><MainCards APIData={APIData}></MainCards></div>
+          <div id="floop" className="twentyeightychild"><MainCards APIData={APIData} count={count}></MainCards></div>
         </div>
       </div>
-      <div className="maininfoparent"><MainCards APIData={APIData}></MainCards></div>
+      <div className="maininfoparent"><MainCards APIData={APIData} count={count}></MainCards></div>
 
     </div>
   );
 
-  function handleGlowButtonClick(){
+  function handleGlowButtonClick(param){
     document.getElementById("floop");
+    increaseCount()
+    setRefreshAPI(!param)
   }
 
   function fetchData(){
