@@ -18,10 +18,18 @@ function importAll(r) {
 
 function App() {
   const [Images, setImages] = useState([]);
+  const [APIData, setAPIData] = useState([]);
+  const [RefreshAPI, setRefreshAPI] = useState(false);
 
   useEffect(() => {
+                                        //A Directory to search, whether to search subdirectories and a regex of what to fetch
     setImages(importAll(require.context('./Components/Images', false, /\.(png|jpe?g|svg)$/)));
+    fetchData();
   }, []);
+
+  useEffect(() =>{
+    fetchData();
+  }, [RefreshAPI])
 
   return (
     <div className="pagewrapper">
@@ -34,18 +42,24 @@ function App() {
         <div className="twentyeightygrid">
           <div  className="twentyeightychild tworowcontainer">
             <img src={Images[1]}></img>
-            <button className="glow-on-hover" type="button" onClick={() => handleGlowButtonClick()}>Press Me</button>
+            <button className="glow-on-hover" type="button" onClick={() => setRefreshAPI(!RefreshAPI)}>Press Me</button>
           </div>
-          <div id="floop" className="twentyeightychild"><MainCards></MainCards></div>
+          <div id="floop" className="twentyeightychild"><MainCards APIData={APIData}></MainCards></div>
         </div>
       </div>
-      <div className="maininfoparent"><MainCards name="fleebo"></MainCards></div>
+      <div className="maininfoparent"><MainCards APIData={APIData}></MainCards></div>
 
     </div>
   );
 
   function handleGlowButtonClick(){
     document.getElementById("floop");
+  }
+
+  function fetchData(){
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(json => setAPIData(json))
   }
 }
 
