@@ -8,7 +8,7 @@ import { FaFacebook, FaHeart, FaInstagram, FaGithub, FaTwitter } from "react-ico
 
 
 
-class Sidebar_Home extends React.Component {
+class SidebarHome extends React.Component {
     constructor(props){
         super(props)
         this.state = { name: "Matt"};
@@ -17,7 +17,7 @@ class Sidebar_Home extends React.Component {
     render() {
         return (
             <div className="Sidebar_Home card">
-                <img className='logo' src={logo}></img>
+                <img className='logo' alt="hello" src={logo}></img>
 
 
                 <div className='container'>
@@ -55,4 +55,4 @@ const handleMouseEnter =(state)=> {
 const handleMouseLeave =(pageName)=> {
     console.log(pageName)
 }
-export default Sidebar_Home;
+export default SidebarHome;

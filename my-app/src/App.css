@@ -9,23 +9,21 @@
   column-gap: 0px;
   width: 100%;
 }
-.pagewrapper > :nth-child(2) {
-  margin-top: 1rem;
-  background-image: linear-gradient(to left, #e8342c,#e8872c);
-}
 
-.homeservetext {
+.toptitlebar h1{
+  background-image: linear-gradient(to left, #e8342c,#e8872c);
+  border-radius: 10px;
   font-size: 40px;
   color: white;
-  float:right;
   font-family: "museo-sans-rounded-700","Trebuchet MS",Arial,sans-serif;
+  height: 100px;
+
 }
 
 .one {
   grid-column: 1 / 1;
   max-width: 180px;
   margin: 0;
-
 }
 
 .maininfoparent {

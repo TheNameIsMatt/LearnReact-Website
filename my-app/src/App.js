@@ -1,4 +1,4 @@
-import Sidebar_Home from "./Components/Sidebar_Home";
+import SidebarHome from "./Components/Sidebar_Home";
 import React, { useEffect, useState } from 'react';
 import MainCards from "./Components/MainCards";
 import './App.css';
@@ -17,7 +17,7 @@ function App() {
   const [APIData, setAPIData] = useState([]);
   const [RefreshAPI, setRefreshAPI] = useState(false);
   const [count, setCount] = useState(0);
-  const [IsLoading, setIsLoading] = useState(true);
+
 
   function increaseCount() {
     setCount(prevCount => prevCount + 1);
@@ -38,7 +38,6 @@ function App() {
     //A Directory to search, whether to search subdirectories and a regex of what to fetch
     setImages(importAll(require.context('./Components/Images', false, /\.(png|jpe?g|svg)$/)));
     loadData();
-    setIsLoading("false");
 
   }, []);
 
@@ -50,28 +49,31 @@ function App() {
   }, [RefreshAPI])
 
   return (
-    <div className = "pagewrapper" >
-      <div className="one"><Sidebar_Home></Sidebar_Home></div>
+    <div className="pagewrapper" >
+      <div className="one"><SidebarHome></SidebarHome></div>
 
       <div className="maininfoparent">
-        <div className="homeservetext">HomeServe</div>
-      </div>
-
-      <div className="maininfoparent">
+        <div className="toptitlebar">
+            <h1>HomeServe</h1>
+        </div>
         <div className="twentyeightygrid">
           <div className="twentyeightychild tworowcontainer">
-            <img src={Images[1]}></img>
+            <img alt="hello" src={Images[1]}></img>
             <button className="glow-on-hover" type="button" onClick={() => handleGlowButtonClick(RefreshAPI)}>Press Me</button>
           </div>
           <div id="floop" className="twentyeightychild">
             <MainCards APIData={APIData} count={count}></MainCards>
           </div>
         </div>
+
+        <MainCards APIData={APIData} count={count}></MainCards>
+        <MainCards APIData={APIData} count={count}></MainCards>
+        <MainCards APIData={APIData} count={count}></MainCards>
+        <MainCards APIData={APIData} count={count}></MainCards>
+
       </div>
 
-      <div className="maininfoparent">
-        <MainCards APIData={APIData} count={count}></MainCards>
-      </div>
+
 
     </div>
   );
