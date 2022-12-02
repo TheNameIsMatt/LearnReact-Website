@@ -4,18 +4,20 @@ import React, { useEffect } from 'react';
 
 function MainCards(props) {
 
-    useEffect(()=>{
-        
+    useEffect(() => {
+
     }, []);
-    
+
     return (
         <>
             <div className='maincolumn card'>
-                <h1>
-                    Hello {props.APIData[props.count].title}
-                </h1>
+                { props.APIData.length > 0 &&
+                    <h1>
+                        Hello {props.APIData[props.count].title}
+                    </h1>
+                }
             </div>
-            
+
         </>
     );
 };
